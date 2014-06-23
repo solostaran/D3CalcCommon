@@ -62,7 +62,7 @@ import android.util.Log;
  * @see D3ObjFactory
  * @see <a href="http://blizzard.github.com/d3-api-docs/">Diablo 3 Web API</a>
  */
-public abstract class D3Obj implements Serializable {
+public abstract class D3Obj implements Serializable, D3ObjInt {
 
 	private static final long serialVersionUID = 20121214L;
 	
@@ -180,6 +180,7 @@ public abstract class D3Obj implements Serializable {
 		return null;
 	}
 
+	@Override
 	public String getFieldByName(String name) {
 		Class<?> c=this.getClass();
 		Field f;
@@ -213,6 +214,7 @@ public abstract class D3Obj implements Serializable {
 	 * @param i size in character of the left margin
 	 * @return this object string representation
 	 */
+	@Override
 	public String toString(int i) {
 		return toFormattedString(i);
 	}
@@ -220,6 +222,7 @@ public abstract class D3Obj implements Serializable {
 	/**
 	 * Provide the platform dependent text representation of a date.
 	 */
+	@Override
 	public String date2text(Date date) {
 		return context.date2text(date);
 	}

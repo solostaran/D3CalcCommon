@@ -10,9 +10,9 @@ public class D3ItemLite extends D3Obj {
 	public String displayColor;
 	public String tooltipParams;
 	@D3FieldAnnotation(notInJson=true)
-	transient public D3Icon iconSmall = null;
+	transient public ID3Icon iconSmall = null;
 	@D3FieldAnnotation(notInJson=true)
-	transient public D3Icon iconLarge = null;
+	transient public ID3Icon iconLarge = null;
 //	transient protected Bitmap itemIcon = null;
 	transient public String itemSlot = null;
 	

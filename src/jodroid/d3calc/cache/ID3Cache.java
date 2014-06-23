@@ -3,7 +3,7 @@ package jodroid.d3calc.cache;
 import java.io.File;
 
 import jodroid.d3obj.D3Hero;
-import jodroid.d3obj.D3Icon;
+import jodroid.d3obj.ID3Icon;
 import jodroid.d3obj.D3Item;
 import jodroid.d3obj.D3Profile;
 import jodroid.d3obj.D3ProfileLite;
@@ -27,9 +27,9 @@ public interface ID3Cache {
 	/**
 	 * Give a D3Item's icon either from cache or by downloading it. 
 	 * @param url an url to the icon (references also the file in cache)
-	 * @return a D3Icon who contains the icon's bitmap.
+	 * @return a ID3Icon who contains the icon's bitmap.
 	 */
-	D3Icon getItemIcon(String url);
+	ID3Icon getItemIcon(String url);
 	
 	/**
 	 * Write a D3Profile in the cache.

@@ -8,13 +8,13 @@ public class D3SkillActive extends D3Obj implements ID3Skill {
 	public D3Rune rune;
 	
 	@Override
+	public D3Skill getSkill() {
+		return skill;
+	}
+	
+	@Override
 	public String toString() {
 		if (skill == null) return "skill undefined";
 		return skill.name + (rune != null ? " / " + rune.name : "");
-	}
-
-	@Override
-	public D3Skill getSkill() {
-		return skill;
 	}
 }

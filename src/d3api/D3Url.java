@@ -3,7 +3,6 @@ package d3api;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import jodroid.d3calc.ProfileListContent;
 import jodroid.d3obj.D3ItemLite;
 import jodroid.d3obj.D3Profile;
 import android.util.Log;
@@ -30,9 +29,9 @@ public class D3Url {
 		return null;
 	}
 	
-	public static String playerProfile2Url(ProfileListContent.ProfileItem p) {
-		return playerProfile2Url(p.battlehost, p.battlename, p.battletag);
-	}
+//	public static String playerProfile2Url(ProfileListContent.ProfileItem p) {
+//		return playerProfile2Url(p.battlehost, p.battlename, p.battletag);
+//	}
 	
 	public static String hero2Url(String battlehost, String battletag, String heroid) {
 		try {
@@ -52,9 +51,9 @@ public class D3Url {
 		return null;
 	}
 	
-	public static String hero2Url(ProfileListContent.ProfileItem p, String heroid) {
-		return hero2Url(p.battlehost, p.battlename, p.battletag, heroid);
-	}
+//	public static String hero2Url(ProfileListContent.ProfileItem p, String heroid) {
+//		return hero2Url(p.battlehost, p.battlename, p.battletag, heroid);
+//	}
 	
 	public static String item2Url(String tooltipParams) {
 		return "http://eu.battle.net/api/d3/data/"+tooltipParams;

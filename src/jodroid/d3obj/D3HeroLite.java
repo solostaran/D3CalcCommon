@@ -2,8 +2,6 @@ package jodroid.d3obj;
 
 import java.util.Date;
 
-import jodroid.d3calc.R;
-
 /**
  * Represents a minimalist D3 Hero that the D3api provides in the player profile JSON file.
  * @author JRD
@@ -12,6 +10,11 @@ import jodroid.d3calc.R;
 public class D3HeroLite extends D3Obj {
 	
 	private static final long serialVersionUID = 20121214L;
+	
+	private static ID3HeroLite platformHeroLite;
+	public static void setDelegate(ID3HeroLite delegate) {
+		platformHeroLite = delegate;
+	}
 	
 	public String name;
 	public long id;
@@ -36,15 +39,15 @@ public class D3HeroLite extends D3Obj {
 	}
 	
 	public String getHardcore() {
-		return hardcore ? context.getString(R.string.hardcore) : new String();
+		return hardcore ? platformHeroLite.getHardcore() : new String();
 	}
 	
 	public String getGender() {
-		return gender == 0 ? context.getString(R.string.gendermale) : context.getString(R.string.genderfemale);
+		return platformHeroLite.getGender(gender);
 	}
 	
 	public String getParagon() {
-		return paragonLevel > 0 ? context.getString(R.string.paragon)+" ("+paragonLevel+")" : new String();
+		return paragonLevel > 0 ? platformHeroLite.getParagon()+" ("+paragonLevel+")" : new String();
 	}
 	
 	public String getLastUpdated() {

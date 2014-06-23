@@ -1,15 +1,18 @@
 package jodroid.d3obj;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 
-import jodroid.d3calc.R;
 import android.util.Log;
 
 
 public class D3Items extends D3Obj {
 	
 	private static final long serialVersionUID = 20121214L;
+	
+	private static ID3Items platformD3Items;
+	public static void setDelegate(ID3Items delegate) {
+		platformD3Items = delegate;
+	}
 
 	// on modification, change these string arrays :
 	// R.array.ItemsJsonNames and R.array.ItemsJsonFields
@@ -74,27 +77,12 @@ public class D3Items extends D3Obj {
 		return null;
 	}
 	
-	private void addItem(ArrayList<D3ItemLite> list, D3ItemLite item, int resId) {
-		list.add(item);
-		item.itemSlot = context.getString(resId);
-	}
-	
+	/**
+	 * Generate a list of items without missing items.<br/>
+	 * Some of this is platform dependent.
+	 */
 	public void buildItemArray() {
-		ArrayList<D3ItemLite> list = new ArrayList<D3ItemLite>();
-		if (head != null) addItem(list, head, R.string.slot_head);
-		if (neck != null) addItem(list, neck, R.string.slot_neck);
-		if (shoulders != null) addItem(list, shoulders, R.string.slot_shoulders);
-		if (torso != null) addItem(list, torso, R.string.slot_torso);
-		if (bracers != null) addItem(list, bracers, R.string.slot_bracers);
-		if (hands != null) addItem(list, hands, R.string.slot_hands);
-		if (waist != null) addItem(list, waist, R.string.slot_waist);
-		if (rightFinger != null) addItem(list, rightFinger, R.string.slot_rightFinger);
-		if (leftFinger != null) addItem(list, leftFinger, R.string.slot_leftFinger);
-		if (legs != null) addItem(list, legs, R.string.slot_legs);
-		if (feet != null) addItem(list, feet, R.string.slot_feet);
-		if (mainHand != null) addItem(list, mainHand, R.string.slot_mainHand);
-		if (offHand != null) addItem(list, offHand, R.string.slot_offHand);
-		itemArray = list.toArray(new D3ItemLite[1]);
+		itemArray = platformD3Items.buildItemArray(this);
 	}
 	
 	/**

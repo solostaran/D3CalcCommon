@@ -2,12 +2,12 @@ package jodroid.d3calc.cache;
 
 import java.io.File;
 
+import jodroid.d3calc.D3Prefs;
 import jodroid.d3obj.D3Hero;
-import jodroid.d3obj.D3Icon;
 import jodroid.d3obj.D3Item;
 import jodroid.d3obj.D3Profile;
 import jodroid.d3obj.D3ProfileLite;
-import jodroid.d3calc.D3Prefs;
+import jodroid.d3obj.ID3Icon;
 
 public class D3Cache implements ID3Cache {
 	private static D3Cache d3cacheInstance;
@@ -38,7 +38,7 @@ public class D3Cache implements ID3Cache {
 	}
 
 	@Override
-	public D3Icon getItemIcon(String url) {
+	public ID3Icon getItemIcon(String url) {
 		return cache.getItemIcon(url);
 	}
 
