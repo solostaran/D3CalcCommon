@@ -2,6 +2,11 @@ package android.util;
 
 import java.io.PrintStream;
 
+/**
+ * Simple log implementation.
+ * TODO: delegation to provide a platform independent Log.
+ * @author JRD
+ */
 public class Log {
 	private static PrintStream out;
 	

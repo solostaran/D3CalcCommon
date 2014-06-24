@@ -15,7 +15,7 @@ import java.util.Date;
 
 import javax.swing.text.View;
 
-import jodroid.d3calc.D3ContextInt;
+import jodroid.d3calc.ID3Context;
 import android.util.Log;
 
 /**
@@ -66,11 +66,11 @@ public abstract class D3Obj implements Serializable, D3ObjInt {
 
 	private static final long serialVersionUID = 20121214L;
 	
-	transient protected static D3ContextInt context;
-	public static void setContext(D3ContextInt c) {
+	transient protected static ID3Context context;
+	public static void setContext(ID3Context c) {
 		context = c;
 	}
-	public static D3ContextInt getContext() {
+	public static ID3Context getContext() {
 		return context;
 	}
 	

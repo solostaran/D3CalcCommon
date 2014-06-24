@@ -9,6 +9,10 @@ import jodroid.d3obj.D3Profile;
 import jodroid.d3obj.D3ProfileLite;
 import jodroid.d3obj.ID3Icon;
 
+/**
+ * Platform independent cache implementation.<br/>
+ * @author JRD
+ */
 public class D3Cache implements ID3Cache {
 	private static D3Cache d3cacheInstance;
 	private ID3Cache cache;
