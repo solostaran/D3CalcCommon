@@ -3,9 +3,9 @@ package d3api;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import jodroid.d3calc.Log;
 import jodroid.d3obj.D3ItemLite;
 import jodroid.d3obj.D3Profile;
-import android.util.Log;
 
 /**
  * Every URL accessing the D3 api is formulated here !

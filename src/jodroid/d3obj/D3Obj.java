@@ -16,7 +16,7 @@ import java.util.Date;
 import javax.swing.text.View;
 
 import jodroid.d3calc.ID3Context;
-import android.util.Log;
+import jodroid.d3calc.Log;
 
 /**
  * Annotation made for JSON parsing.

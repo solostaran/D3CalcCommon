@@ -3,7 +3,8 @@ package jodroid.d3obj;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-import android.util.Log;
+import jodroid.d3calc.Log;
+
 
 public class D3ItemAttributesRaw extends D3Obj {
 	

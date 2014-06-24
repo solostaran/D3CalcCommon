@@ -2,7 +2,8 @@ package jodroid.d3obj;
 
 import java.lang.reflect.Field;
 
-import android.util.Log;
+import jodroid.d3calc.Log;
+
 
 
 public class D3Items extends D3Obj {

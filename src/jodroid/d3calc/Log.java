@@ -1,6 +1,5 @@
-package android.util;
+package jodroid.d3calc;
 
-import java.io.PrintStream;
 
 /**
  * Simple log implementation.
@@ -8,33 +7,36 @@ import java.io.PrintStream;
  * @author JRD
  */
 public class Log {
-	private static PrintStream out;
-	
-	static {
-		out = System.out;
+	private static ILog log;
+	public static void setLog(ILog lg) {
+		log = lg;
 	}
-	
-	public static void setPrintStream(PrintStream ps) {
-		out = ps;
-	}
-	
+
 	public static void v(String tag, String message) {
-		out.println("V:"+ tag +" | "+ message);
+		log.v(tag, message);
 	}
 	
 	public static void d(String tag, String message) {
-		out.println("DEBUG:"+ tag +" | "+ message);
+		log.d(tag, message);
 	}
 	
 	public static void i(String tag, String message) {
-		out.println("INFO:"+ tag +" | "+ message);
+		log.i(tag, message);
 	}
 	
 	public static void w(String tag, String message) {
-		out.println("WARNING:"+ tag +" | "+ message);
+		log.w(tag, message);
 	}
 	
 	public static void e(String tag, String message) {
-		out.println("ERROR:"+ tag +" | "+ message);
+		log.e(tag, message);
+	}
+
+	public static void wtf(String tag, String message) {
+		log.wtf(tag, message);
+	}
+	
+	public static void println(int priority, String tag, String msg) {
+		log.println(priority, tag, msg);
 	}
 }
