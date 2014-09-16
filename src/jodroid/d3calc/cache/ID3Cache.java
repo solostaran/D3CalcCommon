@@ -46,7 +46,7 @@ public interface ID3Cache {
 	/**
 	 * Read a D3Profile from the cache.
 	 * @param battlehost
-	 * @param battletag
+	 * @param battletag in the form johndoe#1234 or johndoe-1234
 	 * @return a D3Profile or null if not found
 	 */
 	D3Profile readProfile(String battlehost, String battletag);
@@ -54,6 +54,7 @@ public interface ID3Cache {
 	/**
 	 * Read a D3hero from the cache.
 	 * @param battlehost
+	 * @param battletag in the form johndoe#1234 or johndoe-1234
 	 * @param heroID
 	 * @return a D3Hero or null if not found
 	 */
@@ -62,7 +63,7 @@ public interface ID3Cache {
 	/**
 	 * Get a D3Profile either from the cache or from the web.
 	 * @param battlehost
-	 * @param battletag
+	 * @param battletag in the form johndoe#1234 or johndoe-1234
 	 * @param prefs conditions about the download depending on cache presence.
 	 * @param aoh a handler for asynchronous download. 
 	 */
